@@ -1,0 +1,238 @@
+<definitions xmlns:ilon="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/message/" xmlns:ilonwsdl="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/" name="iLON100" targetNamespace="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/wsdl/">
+    <types>
+        <xsd:annotation>
+            <xsd:appinfo> _________________________________________________________ i.LON100's general declaration of the SOAP interface. _________________________________________________________ It is prohibited to change any declaration in this file! Copyright 2007 Echelon Corporation http://www.echelon.com </xsd:appinfo>
+            <xsd:documentation> Look into the imported xsd file for more informations </xsd:documentation>
+        </xsd:annotation>
+        <!--  ********************************************************  -->
+        <!--  external schema import                                    -->
+        <!--  ********************************************************  -->
+        <xsd:schema elementFormDefault="qualified">
+            <xsd:import namespace="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/message/" schemaLocation="http://166.239.253.242:8787/WSDL/v4.0/iLON100.xsd"/>
+        </xsd:schema>
+    </types>
+    <!--  ********************************************************  -->
+    <!--  declaration: 'wsdl:message'                               -->
+    <!--  ********************************************************  -->
+    <!--  ________________________________________________________  -->
+    <!--   List                                                     -->
+    <message name="List_SoapIn">
+        <part name="parameters" element="ilon:List"/>
+    </message>
+    <message name="List_SoapOut">
+        <part name="parameters" element="ilon:ListResponse"/>
+    </message>
+    <!--   Get                                                      -->
+    <message name="Get_SoapIn">
+        <part name="parameters" element="ilon:Get"/>
+    </message>
+    <message name="Get_SoapOut">
+        <part name="parameters" element="ilon:GetResponse"/>
+    </message>
+    <!--  Set                                                       -->
+    <message name="Set_SoapIn">
+        <part name="parameters" element="ilon:Set"/>
+    </message>
+    <message name="Set_SoapOut">
+        <part name="parameters" element="ilon:SetResponse"/>
+    </message>
+    <!--  Delete                                                    -->
+    <message name="Delete_SoapIn">
+        <part name="parameters" element="ilon:Delete"/>
+    </message>
+    <message name="Delete_SoapOut">
+        <part name="parameters" element="ilon:DeleteResponse"/>
+    </message>
+    <!--  Read                                                      -->
+    <message name="Read_SoapIn">
+        <part name="parameters" element="ilon:Read"/>
+    </message>
+    <message name="Read_SoapOut">
+        <part name="parameters" element="ilon:ReadResponse"/>
+    </message>
+    <!--  Write                                                     -->
+    <message name="Write_SoapIn">
+        <part name="parameters" element="ilon:Write"/>
+    </message>
+    <message name="Write_SoapOut">
+        <part name="parameters" element="ilon:WriteResponse"/>
+    </message>
+    <!--  Clear                                                     -->
+    <message name="Clear_SoapIn">
+        <part name="parameters" element="ilon:Clear"/>
+    </message>
+    <message name="Clear_SoapOut">
+        <part name="parameters" element="ilon:ClearResponse"/>
+    </message>
+    <!--  InvokeCmd                                                    -->
+    <message name="InvokeCmd_SoapIn">
+        <part name="parameters" element="ilon:InvokeCmd"/>
+    </message>
+    <message name="InvokeCmd_SoapOut">
+        <part name="parameters" element="ilon:InvokeCmdResponse"/>
+    </message>
+    <!--  ________________________________________________________  -->
+    <!--  common header                                             -->
+    <message name="iLON100SoapHeader">
+        <part name="soapHeaderPart" element="ilon:messageProperties"/>
+    </message>
+    <!--  ********************************************************  -->
+    <!--  declaration: 'wsdl:portType'                                  -->
+    <!--  ********************************************************  -->
+    <portType name="iLON100portType">
+        <!--  ______________________________________________________  -->
+        <!--   List                                                   -->
+        <operation name="List">
+            <input message="ilonwsdl:List_SoapIn"/>
+            <output message="ilonwsdl:List_SoapOut"/>
+        </operation>
+        <!--   Get                                                    -->
+        <operation name="Get">
+            <input message="ilonwsdl:Get_SoapIn"/>
+            <output message="ilonwsdl:Get_SoapOut"/>
+        </operation>
+        <!--  Set                                                     -->
+        <operation name="Set">
+            <input message="ilonwsdl:Set_SoapIn"/>
+            <output message="ilonwsdl:Set_SoapOut"/>
+        </operation>
+        <!--  Delete                                                  -->
+        <operation name="Delete">
+            <input message="ilonwsdl:Delete_SoapIn"/>
+            <output message="ilonwsdl:Delete_SoapOut"/>
+        </operation>
+        <!--  Read                                                    -->
+        <operation name="Read">
+            <input message="ilonwsdl:Read_SoapIn"/>
+            <output message="ilonwsdl:Read_SoapOut"/>
+        </operation>
+        <!--  Write                                                   -->
+        <operation name="Write">
+            <input message="ilonwsdl:Write_SoapIn"/>
+            <output message="ilonwsdl:Write_SoapOut"/>
+        </operation>
+        <!--  Clear                                                   -->
+        <operation name="Clear">
+            <input message="ilonwsdl:Clear_SoapIn"/>
+            <output message="ilonwsdl:Clear_SoapOut"/>
+        </operation>
+        <!--  InvokeCmd                                               -->
+        <operation name="InvokeCmd">
+            <input message="ilonwsdl:InvokeCmd_SoapIn"/>
+            <output message="ilonwsdl:InvokeCmd_SoapOut"/>
+        </operation>
+    </portType>
+    <!--  ********************************************************  -->
+    <!--  declaration: 'wsdl:binding'                               -->
+    <!--  ********************************************************  -->
+    <binding name="iLON100soap11Binding" type="ilonwsdl:iLON100portType">
+        <!--  ______________________________________________________  -->
+        <!--  'soap:binding'                                          -->
+        <soapbind:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <!--  ______________________________________________________  -->
+        <!--  List                                                    -->
+        <operation name="List">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/List"/>
+            <input name="ListRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="ListResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Get                                                     -->
+        <operation name="Get">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Get"/>
+            <input name="GetRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="GetResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Set                                                     -->
+        <operation name="Set">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Set"/>
+            <input name="SetRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="SetResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Delete                                                  -->
+        <operation name="Delete">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Delete"/>
+            <input name="DeleteRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="DeleteResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Read                                                    -->
+        <operation name="Read">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Read"/>
+            <input name="ReadRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="ReadResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Write                                                   -->
+        <operation name="Write">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Write"/>
+            <input name="WriteRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="WriteResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  Clear                                                   -->
+        <operation name="Clear">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/Clear"/>
+            <input name="ClearRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="ClearResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+        <!--  InvokeCmd                                                  -->
+        <operation name="InvokeCmd">
+            <soapbind:operation soapAction="http://wsdl.echelon.com/web_services_ns/ilon100/v4.0/action/InvokeCmd"/>
+            <input name="InvokeCmdRequest">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </input>
+            <output name="InvokeCmdResponse">
+                <soapbind:body parts="parameters" use="literal"/>
+                <soapbind:header message="ilonwsdl:iLON100SoapHeader" part="soapHeaderPart" use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <!--  *************************************************************  -->
+    <!--  declaration: 'wsdl:service'                                    -->
+    <!--  *************************************************************  -->
+    <service name="iLON100">
+        <port name="iLON100httpPort" binding="ilonwsdl:iLON100soap11Binding">
+            <soapbind:address location="http://166.239.253.242:8787/WSDL/iLON100.wsdl"/>
+        </port>
+    </service>
+</definitions>
